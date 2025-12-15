@@ -49,7 +49,7 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 
 % The References ReferenceType is an abstract ReferenceType.
 
-:- ref(X,Y,references) .
+:- ref(_,_,references) .
 
 % All ReferenceTypes shall be a subtype of this base ReferenceType - either
 % direct or indirect.
@@ -61,7 +61,7 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 
 % The HierarchicalReferences ReferenceType is an abstract ReferenceType.
 
-:- ref(X,Y,hierarchicalReferences) .
+:- ref(_,_,hierarchicalReferences) .
 
 % It is not permitted to have a Property as SourceNode of a Reference of any
 % subtype of this abstract ReferenceType
@@ -79,14 +79,14 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 
 % The NonHierarchicalReferences ReferenceType is an abstract ReferenceType
 
-:- ref(X,Y,nonHierarchicalReferences) .
+:- ref(_,_,nonHierarchicalReferences) .
 
 % 7.5 HasChild ReferenceType
 % --------------------------
 
 % The HasChild ReferenceType is an abstract ReferenceType.
 
-:- ref(X,Y,hasChild) .
+:- ref(_,_,hasChild) .
 
 % Starting from Node “A” and only following References of the subtypes of the
 % HasChild ReferenceType it shall never be possible to return to “A”.
@@ -98,7 +98,7 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 
 % The Aggregates ReferenceType is an abstract ReferenceType.
 
-:- ref(X,Y,aggregates) .
+:- ref(_,_,aggregates) .
 
 % 7.7 HasComponent ReferenceType
 % ------------------------------
