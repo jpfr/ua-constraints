@@ -35,10 +35,10 @@ subtypeOfR(X,Y)  :- hasSubtypeR(Y,X) .
 % a subtype of themselves. This simplifies constraints that need to be satisfied
 % for a type and all its subtypes.
 
-hasSubtype(X,Y) :- node(X, referenceTypeNode, _), X == Y .
-hasSubtype(X,Y) :- node(X, dataTypeNode, _),      X == Y .
-hasSubtype(X,Y) :- node(X, variableTypeNode, _),  X == Y .
-hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
+hasSubtype(X,Y) :- node(X,referenceTypeNode,_), X == Y .
+hasSubtype(X,Y) :- node(X,dataTypeNode,_),      X == Y .
+hasSubtype(X,Y) :- node(X,variableTypeNode,_),  X == Y .
+hasSubtype(X,Y) :- node(X,objectTypeNode,_),    X == Y .
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%% Specification Part 3 %%%
@@ -54,7 +54,7 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 % All ReferenceTypes shall be a subtype of this base ReferenceType - either
 % direct or indirect.
 
-:- node(X, referenceTypeNode, _), not subtypeOfR(X, "i=31") .
+:- node(X,referenceTypeNode,_), not subtypeOfR(X,"i=31") .
 
 % 7.3 HierarchicalReferences ReferenceType
 % ----------------------------------------
@@ -110,7 +110,7 @@ hasSubtype(X,Y) :- node(X, objectTypeNode, _),    X == Y .
 
 % By using the HasComponent Reference, the Variable is defined as DataVariable.
 
-isDataVariable(X) :- node(X, variableNode, _), impliedRef(_,X,hasComponent) .
+isDataVariable(X) :- node(X,variableNode,_), impliedRef(_,X,hasComponent) .
 
 % If the TargetNode is a Variable, the SourceNode shall be an Object, an
 % ObjectType, a DataVariable or a VariableType.
